@@ -7,17 +7,21 @@
     <link rel="stylesheet" href="style.css" type = "text/css"/>
 </head>
 <body>
+    <select id = "language-selector">
+        <option value="cn" selected>中文</option>
+        <option value="en">English</option>
+    </select>
     <form class="container" style="padding-top:30px;" action="/SelfPastbin/paste.php" method="post">
         <div class="text-center">
             <button type="submit" id = "btn-submit" >提交</button>
         </div>
         <div class="form-group">
-            <label for="Title">标题</label>
+            <label for="Title" id="Titleid">标题</label>
             <div id="messageTitle" class = "alert-text-style" ></div>
             <input type="text" placeholder="在此处输入你的标题" class="form-control" id="Title" name="title"/>
         </div>
         <div class="form-group">
-            <label for="Content">内容</label>
+            <label for="Content" id="Contentid">内容</label>
             <div id="messageContent" class = "alert-text-style" ></div>
             <textarea class="form-control" placeholder="在此处输入你的代码" id="Content" rows="30" name="content"></textarea>
         </div>

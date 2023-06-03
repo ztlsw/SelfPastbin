@@ -1,3 +1,48 @@
+/*language selector*/
+const LANGUAGES = 
+{
+    "en":
+    {
+        texts:
+        {
+            "btn-submit":"Submit",
+            "Titleid":"Title",
+            "Contentid":"Content"
+        }
+    },
+    "cn":
+    {
+        texts:
+        {
+            "btn-submit":"提交",
+            "Titleid":"标题",
+            "Contentid":"内容"
+        }
+    }
+};
+
+/*load_language*/
+var current_language = localStorage.getItem("lang") || "cn";
+if (current_language != "cn") {
+    document.getElementById("language-selector").value = current_language;
+}
+function load_language()
+{
+    let curLang = LANGUAGES[current_language];
+    let localTexts = curLang.texts;
+    Object.entries(localTexts).forEach(([key,value])=>{
+        document.getElementById(key).innerHTML = value;
+    });
+}
+load_language();
+document.getElementById("language-selector").addEventListener("change", (e) => {
+    current_language = e.target.value;
+    localStorage.setItem("lang", e.target.value);
+    load_language();
+});
+
+
+/*lose forcus*/
 var formElements = document.querySelectorAll('.form-control');
 formElements.forEach((element)=>{
     let limstr = element.getAttribute('placeholder');
@@ -11,6 +56,7 @@ formElements.forEach((element)=>{
 });
 
 
+/*maxlength*/ 
 var maxSizeInBytes = 1024*1024;
 document.getElementById('btn-submit').addEventListener('click',(e)=>{
     var textarea = document.getElementById('Content').value;

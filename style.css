@@ -3,7 +3,7 @@
     padding: 0;
 }
 body{
-    background-color: white;
+    background-color: rgb(146, 121, 121);
     font-family: 'Roboto', sans-serif;
     font-size: 1.5em;
     overflow-x: hidden;
@@ -35,21 +35,21 @@ label{
     height: calc(11.5em+.75rem+2px);
     width: 95%;
     color: #495057;
+    background-color: rgb(252, 209, 216);
     line-height: 1.5;
-    background-color: #fff;
     padding-left: 10px;
     border:1px solid #ced4da;
     transition: border-color .15s linear, box-shadow .15s linear;
 }
 .form-control:focus {
     color: #495057;
-    background-color: #fff;
+    background-color: rgb(252, 209, 216);
     border-color: #80bdff;
     outline: 0;
     box-shadow: 0 0 0 .2rem #007bff40
 }
 #btn-submit{
-    background-color: #9d88d3;;
+    background-color: rgb(146, 121, 121);
     position: relative;
     border: none;
     border-radius: 5px;
@@ -67,4 +67,22 @@ label{
 .alert-text-style{
     color: red;
     font-size: 0.5em;
+    cursor:pointer;
+}
+
+#language-selector {
+    width: 200px;
+    height: 40px;
+    background-color:  #9d88d3;
+    border-radius: 5px;
+    position: relative;
+    font-size: 16px;
+    padding: 10px;
+    color: #333;
+    cursor:pointer;
+}
+
+#language-selector option{
+    background-color: white;
+    color: #333;
 }
