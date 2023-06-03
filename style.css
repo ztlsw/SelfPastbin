@@ -63,3 +63,8 @@ label{
     cursor:pointer;      
     box-shadow: 6px 7px 40px -4px rgba(0, 0, 0, 0.2);
 }
+
+.alert-text-style{
+    color: red;
+    font-size: 0.5em;
+}

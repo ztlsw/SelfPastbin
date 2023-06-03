@@ -15,9 +15,23 @@ var maxSizeInBytes = 1024*1024;
 document.getElementById('btn-submit').addEventListener('click',(e)=>{
     var textarea = document.getElementById('Content').value;
     var titlearea = document.getElementById('Title').value;
-    if(textarea.length>maxSizeInBytes||titlearea.length>3000)
+    let messageTitle = document.getElementById('messageTitle');
+    let messageContent = document.getElementById('messageContent');
+    if(titlearea.length >= 3000)
     {
         e.preventDefault();
-        alert('内容长度超过限制');
+        messageTitle.textContent = '标题长度过长';
+        messageContent.textContent = '';
+    }
+    else if(textarea.length>=maxSizeInBytes)
+    {
+        e.preventDefault();
+        messageContent.textContent = '内容长度过长';
+        messageTitle.textContent = '';
+    } 
+    else 
+    {
+        messageTitle.textContent = '';
+        messageContent.textContent = '';
     }
 });
